@@ -1,0 +1,264 @@
+/* overall */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Colors */
+
+    /* Primary Colors For Background */
+
+    --Light-red: hsla(0, 100%, 67%, 0.1);
+    --Orangey-yellow: hsla(39, 100%, 56%, 0.1);
+    --Green-teal: hsla(166, 100%, 37%, 0.1);
+    --Cobalt-blue: hsla(234, 85%, 45%, 0.1);
+
+    /* Primary Colors for text */
+
+    --Light-red-text: hsla(0, 100%, 67%);
+    --Orangey-yellow-text: hsla(39, 100%, 56%);
+    --Green-teal-text: hsla(166, 100%, 37%);
+    --Cobalt-blue-text: hsla(234, 85%, 45%);
+
+    /* Gradients */
+
+    --Light-slate-blue-background: hsl(252, 100%, 67%);
+    --Light-royal-blue-background: hsl(241, 81%, 54%);
+
+    --Violet-blue-circle: hsla(256, 72%, 46%, 1);
+    --Persian-blue-circle: hsla(241, 72%, 46%, 0);
+
+    /* Neutral */
+
+    --White: hsl(0, 0%, 100%);
+    --Pale-blue: hsl(221, 100%, 96%);
+    --Light-lavender: hsl(241, 100%, 89%);
+    --Dark-gray-blue: hsl(224, 30%, 27%);
+
+    /* font */
+
+    --Hanken-Grotesk: 'Hanken Grotesk';
+}
+
+body {
+    min-height: 100vh;
+    background-color: var(--Pale-blue);
+    font-family: var(--Hanken-Grotesk);
+    display: flex;
+    flex-direction: column;
+    font-size: 1.1rem;
+}
+
+/* main */
+
+.main {
+    flex: 1;
+    display: flex;
+}
+
+/* card */
+
+.card {
+    display: flex;
+    flex-direction: column;
+    width: max(100%, 500px);
+    min-height: 100%;
+    background-color: var(--White);
+}
+
+/* first-section */
+
+.top-section {
+    background-color: var(--Light-slate-blue-background);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 0;
+    justify-self: flex-start;
+    border-radius: 0 0 30px 30px;
+    margin-bottom: 20px;
+}
+
+.card-title {
+    font-size: 1.2em;
+    color: var(--Pale-blue);
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.score-circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(var(--Cobalt-blue), var(--Light-slate-blue-background));
+    color: var(--White);
+    margin-bottom: 40px;
+
+}
+
+.level {
+    font-size: 1.6em;
+    color: var(--White);
+    margin-bottom: 5px;
+}
+
+.level-desc {
+    color: var(--Pale-blue);
+    font-weight: 500;
+    width: max(80%, 100px);
+    text-align: center;
+}
+
+.score-circle p:first-child {
+    display: block;
+    font-size: 4em;
+}
+
+.score-circle p:last-child {
+    color: var(--Dark-gray-blue);
+}
+
+/* bottom section */
+
+.bottom-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0 30px;
+}
+
+.subtitle {
+    color: var(--Dark-gray-blue);
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.score-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 10px;
+    border-radius: 10px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.icon {
+    margin-right: 15px;
+    vertical-align: bottom;
+}
+
+.of {
+    color: var(--Dark-gray-blue)
+}
+
+/* score bar colors */
+
+.reaction {
+    background-color: var(--Light-red);
+}
+
+.reaction strong {
+    color: var(--Light-red-text);
+}
+
+.memory {
+    background-color: var(--Orangey-yellow);
+}
+
+.memory strong {
+    color: var(--Orangey-yellow-text);
+}
+
+.verbal {
+    background-color: var(--Green-teal);
+}
+
+.verbal strong {
+    color: var(--Green-teal-text);
+}
+
+.visual {
+    background-color: var(--Cobalt-blue);
+    margin-bottom: 15px;
+}
+
+.visual strong {
+    color: var(--Cobalt-blue-text);
+}
+
+.continue-btn {
+    width: 100%;
+    height: 60px;
+    border-radius: 30px;
+    border: 0;
+    background-color: var(--Dark-gray-blue);
+    color: var(--White);
+    font-size: 1.3em;
+}
+
+/* footer*/
+.footer {
+    font-size: 0.6875rem;
+    text-align: center;
+    background-color: var(--White);
+    padding: 20px 0 10px;
+}
+
+.footer a {
+    color: hsl(228, 45%, 44%);
+}
+
+@media only screen and (min-width: 800px) {
+
+    .main {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .card {
+        flex-direction: row;
+        width: min(100%, 600px);
+        height: fit-content;
+        border-radius: 30px;
+    }
+
+    .top-section {
+        border-radius: 30px;
+        height: 100%;
+        width: 300px;
+        margin: 0;
+    }
+
+    .level-desc {
+        font-size: 0.85em;
+        width: 220px;
+    }
+
+    .bottom-section {
+        width: 300px;
+        padding: 30px 35px 0;
+        font-size: 0.8em;
+        gap: 10px;
+    }
+
+    .score-bar {
+        height: 45px;
+        border-radius: 8px;
+    }
+
+    .icon {
+        margin-right: 6px;
+    }
+
+    .continue-btn {
+        height: 40px;
+    }
+}
